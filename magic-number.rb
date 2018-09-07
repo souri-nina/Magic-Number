@@ -3,20 +3,20 @@ require 'to_words'
   def main
     print `clear`
     puts '-- 4 is the Magic number --'
-    puts 'Enter a Word to Check.'
+    puts 'Enter a number to Check.'
     @char = gets.strip.i
     magic
   end
 
 def magic
-  count = 0
-  @char.each do |char|
-    if char == char.downcase
-      count += 1
-    end
-  return count
+  count == @char.to_words.gsub(" ", "").count
+  puts "#{@char} is #{count} "
+  @char == count
+  if @char == 4
+    print "4 is the Magic Number"
+  else
+    magic
+  end  
 end
-
-puts input
 
 main
